@@ -14,5 +14,8 @@
 </head>
 <body>
     <h1>Success</h1>
+    @isset($customer)
+        <h5>{{ $customer?->name }}</h5>
+    @endisset
 </body>
 </html>
