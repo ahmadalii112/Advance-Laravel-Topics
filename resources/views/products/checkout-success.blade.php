@@ -13,20 +13,6 @@
 
 </head>
 <body>
-<div style="display: flex; gap: 3rem">
-    @foreach($products as $product)
-        <div>
-            <img src="{{ $product->image }}" alt="" style="max-width: 100%">
-            <h5>{{ $product->name }}</h5>
-            <p>${{ $product->price }}</p>
-        </div>
-    @endforeach
-</div>
-<div>
-    <form action="{{ route('checkout') }}" method="post">
-        @csrf
-        <button>Checkout</button>
-    </form>
-</div>
+    <h1>Success</h1>
 </body>
 </html>

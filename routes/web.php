@@ -18,4 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('products', 'index')->name('products.index');
+    Route::post('checkout', 'checkout')->name('checkout');
+    Route::get('success', 'success')->name('checkout.success');
+    Route::get('cancel', 'cancel')->name('checkout.cancel');
+});
+
