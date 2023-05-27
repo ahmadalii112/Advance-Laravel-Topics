@@ -24,5 +24,6 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('checkout', 'checkout')->name('checkout');
     Route::get('success', 'success')->name('checkout.success');
     Route::get('cancel', 'cancel')->name('checkout.cancel');
+    Route::post('webhook', 'webhook')->name('checkout.webhook');
 });
 
