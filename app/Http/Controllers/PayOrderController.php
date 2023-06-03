@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class PayOrderController extends Controller
 {
-    public function store(PaymentGateway $paymentGateway) # If we want laravel to Inject class for us it uses Reflection Class and inject it
+    # public function store(PaymentGateway $paymentGateway) // Unresolvable dependency resolving [Parameter #0 [ <required> $currency ]] in class App\Billing\PaymentGateway
+    public function store()
     {
-       // $paymentGateway = new PaymentGateway(); # instance of PaymentGateway Class
+        $paymentGateway = new PaymentGateway('usd'); # It works
+
         dd($paymentGateway->charge(200));
     }
 }
