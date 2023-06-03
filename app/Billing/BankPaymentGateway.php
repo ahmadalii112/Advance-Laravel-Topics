@@ -4,7 +4,7 @@ namespace App\Billing;
 
 use Illuminate\Support\Str;
 
-class PaymentGateway
+class BankPaymentGateway
 {
     private $currency;
     private $discount;
