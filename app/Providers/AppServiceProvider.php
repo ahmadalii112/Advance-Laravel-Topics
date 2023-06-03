@@ -12,7 +12,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(PaymentGateway::class, function ($app) {
+        # singleton() initialize class once while bind() every time initialize
+        $this->app->singleton(PaymentGateway::class, function ($app) {
             # inside here we construct our payment gateway
             return new PaymentGateway('usd');
         });
