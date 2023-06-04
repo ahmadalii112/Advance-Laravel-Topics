@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('products', 'index')->name('products.index');
+    Route::post('checkout', 'checkout')->name('checkout');
+    Route::get('success', 'success')->name('checkout.success');
+    Route::get('cancel', 'cancel')->name('checkout.cancel');
+    Route::post('webhook', 'webhook')->name('checkout.webhook');
+});
+
