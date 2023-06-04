@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChannelController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('channel', [ChannelController::class, 'index'])->name('channel');
+Route::get('posts/create', [PostController::class, 'create'])->name('posts-create');
