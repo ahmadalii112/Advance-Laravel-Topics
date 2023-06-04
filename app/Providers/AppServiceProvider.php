@@ -23,5 +23,10 @@ class AppServiceProvider extends ServiceProvider
     {
         # Option - 1 Every Single View => every time when our view load a query hit to the database so use this if it is necessary
         // View::share('channels', Channel::oldest('name')->get());
+
+        # Option - 2 ViewComposer => we can specify one or many views by adding [] syntax
+        View::composer(['post.*', 'channel.index'], function ($view) {
+            $view->with('channels', Channel::oldest('name')->get());
+        });
     }
 }
