@@ -28,5 +28,5 @@ Route::get('/postcards', function () {
 
 // Facade way of doing it
 Route::get('/facades', function () {
-    Postcard::hello('Hello ALi', 'Ali@mailinator.com');
+    Postcard::hello('Hello Aiman', 'aiman@mailinator.com');
 });

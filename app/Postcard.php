@@ -2,15 +2,12 @@
 
 namespace App;
 
-class Postcard
+use Illuminate\Support\Facades\Facade;
+
+class Postcard extends Facade
 {
-    protected static function resolveFacade($name)
+    protected static function getFacadeAccessor()
     {
-        return app()[$name];
-    }
-    public static function __callStatic($method, $args)
-    {
-        return (self::resolveFacade('Postcard'))
-            ->$method(...$args);
+        return 'Postcard'; // This should match the binding key in the service container
     }
 }
